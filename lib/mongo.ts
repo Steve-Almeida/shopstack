@@ -1,3 +1,4 @@
+import "server-only"; // build fails if a client component ever imports this (keeps MONGODB_URI off the browser)
 import mongoose from "mongoose";
 
 // Cache the connection across hot reloads / serverless invocations

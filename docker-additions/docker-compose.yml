@@ -1,0 +1,13 @@
+services:
+  web:
+    build:
+      context: .
+      args:
+        # public value, baked into the build
+        NEXT_PUBLIC_APP_URL: http://localhost:3000
+    ports:
+      - "3000:3000"
+    # server-only secrets are injected at runtime from your local .env, never baked into the image
+    env_file: .env
+    environment:
+      BETTER_AUTH_URL: http://localhost:3000
